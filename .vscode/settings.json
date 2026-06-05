@@ -1,0 +1,200 @@
+{
+    // ─────────────────────────────────────────
+    // Git
+    // ─────────────────────────────────────────
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+
+    // ─────────────────────────────────────────
+    // Editor ทั่วไป
+    // ─────────────────────────────────────────
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": false,
+    "editor.rulers": [120],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+
+    // ─────────────────────────────────────────
+    // Lua Language Server (sumneko.lua)
+    // ─────────────────────────────────────────
+
+    // บอก extension ว่าใช้ Lua 5.1 → loadstring ไม่ deprecated
+    "Lua.runtime.version": "Lua 5.1",
+
+    // ปิด warning ที่ไม่จำเป็นสำหรับ exploit
+    "Lua.diagnostics.disable": [
+        "deprecated",
+        "lowercase-global",
+        "undefined-global"
+    ],
+
+    // ปิด popup ถาม third-party library
+    "Lua.workspace.checkThirdParty": false,
+
+    // ความเร็ว hint inline
+    "Lua.hint.enable": true,
+    "Lua.hint.paramName": "Disable",
+    "Lua.hint.setType": false,
+
+    // Globals ทั้งหมดสำหรับ Roblox Exploit
+    "Lua.diagnostics.globals": [
+        // ── Executor Core ──
+        "warn",
+        "task",
+        "getgenv",
+        "getrenv",
+        "getreg",
+        "getgc",
+        "getmenv",
+        "getsenv",
+        "gethui",
+
+        // ── Hook / Closure ──
+        "hookfunction",
+        "hookmetamethod",
+        "newcclosure",
+        "clonefunction",
+        "iscclosure",
+        "islclosure",
+        "checkcaller",
+
+        // ── Metatable ──
+        "getrawmetatable",
+        "setrawmetatable",
+        "isreadonly",
+        "setreadonly",
+        "makereadonly",
+
+        // ── Instance / Script ──
+        "getinstances",
+        "getnilinstances",
+        "getscripts",
+        "getrunningscripts",
+        "getloadedmodules",
+        "getscriptclosure",
+        "getscriptfunction",
+        "getproto",
+        "getprotos",
+        "decompile",
+        "saveinstance",
+
+        // ── Signal / Event ──
+        "firesignal",
+        "fireproximityprompt",
+        "fireclickdetector",
+        "getconnections",
+
+        // ── Thread / Identity ──
+        "getthreadidentity",
+        "setthreadidentity",
+        "getallthreads",
+
+        // ── Remote / Network ──
+        "request",
+        "http_request",
+        "WebSocket",
+
+        // ── Filesystem ──
+        "writefile",
+        "readfile",
+        "appendfile",
+        "makefolder",
+        "isfolder",
+        "isfile",
+        "listfiles",
+        "delfile",
+        "delfolder",
+        "loadfile",
+        "dofile",
+
+        // ── Drawing API ──
+        "Drawing",
+        "cleardrawcache",
+
+        // ── Input Simulation ──
+        "mouse1click",
+        "mouse1press",
+        "mouse1release",
+        "mouse2click",
+        "mouse2press",
+        "mouse2release",
+        "keypress",
+        "keyrelease",
+        "mousescroll",
+        "mousemoverel",
+        "mousemoveabs",
+
+        // ── Misc ──
+        "setclipboard",
+        "setfpscap",
+        "getfpscap",
+        "identifyexecutor",
+        "getexecutorname",
+        "setscriptable",
+        "gethiddenproperty",
+        "sethiddenproperty",
+        "crypt",
+        "bit32",
+
+        // ── Console (rconsole) ──
+        "rconsoleprint",
+        "rconsolewarn",
+        "rconsoleerr",
+        "rconsoleclear",
+        "rconsoletitle",
+        "rconsolecreate",
+        "rconsoledestroy",
+        "rconsoleinfo",
+
+        // ── loadstring (Lua 5.1 built-in แต่ต้องประกาศสำหรับ Luau) ──
+        "loadstring"
+    ],
+
+    // ─────────────────────────────────────────
+    // LuaHelper (ถ้าติดตั้งไว้)
+    // ─────────────────────────────────────────
+    "luahelper.diagnostics.globals": [
+        "getgenv", "getrenv", "getreg", "getgc", "getmenv", "getsenv", "gethui",
+        "hookfunction", "hookmetamethod", "newcclosure", "clonefunction",
+        "iscclosure", "islclosure", "checkcaller",
+        "getrawmetatable", "setrawmetatable", "isreadonly", "setreadonly", "makereadonly",
+        "getinstances", "getnilinstances", "getscripts", "getrunningscripts",
+        "getloadedmodules", "getscriptclosure", "getscriptfunction",
+        "getproto", "getprotos", "decompile", "saveinstance",
+        "firesignal", "fireproximityprompt", "fireclickdetector", "getconnections",
+        "getthreadidentity", "setthreadidentity", "getallthreads",
+        "request", "http_request", "WebSocket",
+        "writefile", "readfile", "appendfile", "makefolder", "isfolder",
+        "isfile", "listfiles", "delfile", "delfolder", "loadfile", "dofile",
+        "Drawing", "cleardrawcache",
+        "mouse1click", "mouse1press", "mouse1release",
+        "mouse2click", "mouse2press", "mouse2release",
+        "keypress", "keyrelease", "mousescroll", "mousemoverel", "mousemoveabs",
+        "setclipboard", "setfpscap", "getfpscap",
+        "identifyexecutor", "getexecutorname",
+        "setscriptable", "gethiddenproperty", "sethiddenproperty",
+        "crypt", "bit32",
+        "rconsoleprint", "rconsolewarn", "rconsoleerr", "rconsoleclear",
+        "rconsoletitle", "rconsolecreate", "rconsoledestroy", "rconsoleinfo",
+        "loadstring"
+    ],
+
+    // ─────────────────────────────────────────
+    // File นามสกุล
+    // ─────────────────────────────────────────
+    "files.associations": {
+        "*.lua": "lua",
+        "*.luau": "lua"
+    },
+
+    // ไม่แสดงโฟลเดอร์/ไฟล์ที่ไม่ต้องการ
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true
+    }
+}
